@@ -1,6 +1,6 @@
 syntax = "proto3";
 package com.pager.api;
-option go_package = "github.com/YRuzik/pager_proto-services/pkg/api/pager_proto/chat;pager_chat";
+option go_package = "github.com/YRuzik/pager_proto-services/pkg/api/pager_proto/chat_actions;pager_chat";
 
 service ChatActions {
   rpc CreateChat(CreateChatRequest) returns (Chat);
