@@ -1,6 +1,6 @@
 syntax = "proto3";
 package com.pager.api;
-option go_package = "github.com/YRuzik/pager-services/services/pkg/api/pager_proto/chat;pager_chat_actions";
+option go_package = "pager-services/pkg/api/pager_api/chat;pager_chat";
 import "common/common.proto";
 
 service ChatActions {
