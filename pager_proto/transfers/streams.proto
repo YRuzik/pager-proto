@@ -1,0 +1,25 @@
+syntax = "proto3";
+package com.pager.api;
+option go_package = "github.com/YRuzik/pager-services/services/pkg/api/pager_proto/transfers;pager_transfers";
+import 'transfers/item.proto';
+
+message ProfileStreamRequest {
+  enum Type {
+    none = 0;
+    profile_info = 1; // информация о профиле
+    chats = 2; // данные чатах
+  }
+}
+
+message ChatStreamRequest {
+  enum Type {
+    none = 0;
+    messages = 1; // сообщения в чате
+  }
+  string chat_id = 1; // идентификатор чата
+}
+
+service PagerStreams {
+  rpc StreamProfile(ProfileStreamRequest) returns (stream TransferObject);
+  rpc StreamChat(ChatStreamRequest) returns (stream TransferObject);
+}

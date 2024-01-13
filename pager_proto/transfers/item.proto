@@ -1,0 +1,10 @@
+syntax = "proto3";
+package com.pager.api;
+option go_package = "github.com/YRuzik/pager-services/services/pkg/api/pager_proto/transfers;pager_transfers";
+
+message TransferObject {
+  string id = 1; // уникальный идентификатор объекта
+  string section_id = 2; // идентификатор секции данных
+  bytes data = 3; // сериализованные данные
+  string type = 4; // тип данных
+}

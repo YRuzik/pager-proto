@@ -1,0 +1,5 @@
+syntax = "proto3";
+package com.pager.api;
+option go_package = "github.com/YRuzik/pager-services/services/pkg/api/pager_proto/common;pager_common";
+
+message Empty {}

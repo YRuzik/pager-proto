@@ -1,0 +1,65 @@
+syntax = "proto3";
+package com.pager.api;
+option go_package = "github.com/YRuzik/pager-services/services/pkg/api/pager_proto/chat;pager_chat_actions";
+import "common/common.proto";
+
+service ChatActions {
+  rpc CreateChat(CreateChatRequest) returns (Chat);
+  rpc SendMessage(ChatMessage) returns (Empty);
+}
+
+enum ChatType {
+  group = 0;
+  personal = 1;
+}
+
+message Chat {
+  string id = 1; //идентификатор чата
+  ChatType type = 2; //тип чата
+  optional ChatMetadata metadata = 3; //дополнительная информация
+  repeated ChatMessage messages = 4; //сообщения в чате
+  repeated string members_id = 5; //идентификаторы участников
+}
+
+message ChatMetadata {
+  string title = 1; // название группового чата
+  optional string avatar_url = 2; // обложка для группового чата
+}
+
+message ChatMessage {
+  enum MessageStatus { //статус сообщения
+    uploading = 0;
+    sent = 1;
+    seen = 2;
+    error = 3;
+    deleted = 4;
+  }
+  optional string text = 1; //текст сообщения
+  int64 stamp_millis = 2; //время отправки сообщения
+  MessageStatus status = 3; //статус сообщения
+  string author_id = 4; //автор сообщения
+  string linked_chat_id = 5; //связанный чат
+}
+
+message CreateChatRequest {
+  ChatType type = 1; //тип чата
+  optional ChatMetadata metadata = 2; //дополнительная информация
+  repeated string members_id = 3; //идентификаторы участников
+}
+
+//message ChatRules {
+//  oneof Rules {
+//    PersonalChat personal_chat = 1; // персональные правила чата
+//    GroupChat group_chat = 2; // групповые правила чата
+//  }
+//}
+//
+//message PersonalChat {
+//  ChatMessage message = 1; // первое сообщение которое пишет отправитель
+//}
+//
+//message GroupChat {
+//  string title = 1; // название группового чата
+//  optional string avatar_url = 2; // обложка для группового чата
+//}
+
