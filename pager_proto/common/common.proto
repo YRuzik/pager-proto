@@ -3,3 +3,10 @@ package com.pager.api;
 option go_package = "pager-services/pkg/data/pager_api/common;pager_common";
 
 message Empty {}
+
+message PagerProfile {
+  int64 user_id = 1; // Индетификатор пользователя
+  string email = 2; // Почта пользователя
+  bytes avatar = 3; // Картинка профиля пользователя
+  string login = 4;  // Логин пользователя
+}

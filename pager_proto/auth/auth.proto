@@ -1,0 +1,27 @@
+syntax = "proto3";
+import "common.proto";
+
+package com.pager.api;
+
+option go_package = "pager-services/pkg/data/pager_api/auth;pager_auth";
+
+service AuthService  {
+  rpc Login(LoginRequest) returns (Token);
+  rpc Registration(RegistrationRequest) returns (Empty);
+  rpc Logout(Token) returns (Empty);
+}
+
+message LoginRequest{
+  string identity = 1; //Логин или почта для авторизации
+  string password = 2; //Пароль пользователя
+}
+
+message Token {
+  string token = 1; //JWT-токен
+}
+
+message RegistrationRequest {
+  string login = 1; //Логин пользователя
+  string email = 2; //Почта пользователя
+  string password = 3; //Пароль пользователя
+}
