@@ -1,9 +1,7 @@
 syntax = "proto3";
-import "common.proto";
-
 package com.pager.api;
-
-option go_package = "pager-services/pkg/data/pager_api/auth;pager_auth";
+option go_package = "pager-services/pkg/api/pager_api/auth;pager_auth";
+import "common/common.proto";
 
 service AuthService  {
   rpc Login(LoginRequest) returns (Token);
