@@ -6,7 +6,6 @@ import "common/common.proto";
 service AuthService  {
   rpc Login(LoginRequest) returns (Token);
   rpc Registration(RegistrationRequest) returns (Empty);
-  rpc Logout(Token) returns (Empty);
   rpc SearchUsersByIdentifier(SearchUsersRequest) returns (SearchUsersResponse);
 }
 
@@ -16,7 +15,8 @@ message LoginRequest{
 }
 
 message Token {
-  string token = 1; //JWT-токен
+  string refresh_token = 1; //JWT-токен из БД для создания access token
+  string access_token = 2; //JWT-токен информация о пользователе
 }
 
 message RegistrationRequest {
