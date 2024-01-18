@@ -26,6 +26,16 @@ message ChatMetadata {
   optional string avatar_url = 2; // обложка для группового чата
 }
 
+message ChatRole {
+  enum Roles {
+    none = 0;
+    member = 1;
+    viewer = 2;
+  }
+  string id = 1; // идентификатор чата
+  Roles role = 2; // роль в чате
+}
+
 message ChatMessage {
   enum MessageStatus { //статус сообщения
     uploading = 0;
