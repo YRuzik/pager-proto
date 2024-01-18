@@ -7,7 +7,7 @@ message ProfileStreamRequest {
   enum Type {
     none = 0;
     profile_info = 1; // информация о профиле
-    chats = 2; // данные чатах
+    chats_role = 2; // информация о роли в чатах
   }
 }
 
