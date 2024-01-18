@@ -14,7 +14,8 @@ message ProfileStreamRequest {
 message ChatStreamRequest {
   enum Type {
     none = 0;
-    messages = 1; // сообщения в чате
+    chat_info = 1; // информация о чате
+    messages = 2; // сообщения в чате
   }
   string chat_id = 1; // идентификатор чата
 }

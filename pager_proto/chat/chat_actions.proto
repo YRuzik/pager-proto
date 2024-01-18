@@ -17,8 +17,7 @@ message Chat {
   string id = 1; //идентификатор чата
   ChatType type = 2; //тип чата
   optional ChatMetadata metadata = 3; //дополнительная информация
-  repeated ChatMessage messages = 4; //сообщения в чате
-  repeated string members_id = 5; //идентификаторы участников
+  repeated string members_id = 4; //идентификаторы участников
 }
 
 message ChatMetadata {
