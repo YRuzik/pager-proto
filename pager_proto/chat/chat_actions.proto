@@ -44,11 +44,12 @@ message ChatMessage {
     error = 3;
     deleted = 4;
   }
-  optional string text = 1; //текст сообщения
-  int64 stamp_millis = 2; //время отправки сообщения
-  MessageStatus status = 3; //статус сообщения
-  string author_id = 4; //автор сообщения
-  string linked_chat_id = 5; //связанный чат
+  string id = 1; // идентификатор сообщения
+  optional string text = 2; //текст сообщения
+  int64 stamp_millis = 3; //время отправки сообщения
+  MessageStatus status = 4; //статус сообщения
+  string author_id = 5; //автор сообщения
+  string linked_chat_id = 6; //связанный чат
 }
 
 message CreateChatRequest {
