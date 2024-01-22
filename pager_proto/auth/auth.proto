@@ -22,6 +22,7 @@ message Token {
 
 message RefreshRequest{
   string refresh_token = 1;
+  string access_token = 2;
 }
 message RefreshResponse{
   string access_token= 1;
