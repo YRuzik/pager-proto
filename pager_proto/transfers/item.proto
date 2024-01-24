@@ -3,8 +3,8 @@ package com.pager.api;
 option go_package = "pager-services/pkg/api/pager_api/transfers;pager_transfers";
 
 message TransferObject {
-  string id = 1; // идентификатор объекта (генерируется в mongodb)
-  string section_id = 2; // идентификатор секции данных
-  bytes data = 3; // сериализованные данные
-  string type = 4; // тип данных
+  string Id = 1; // идентификатор объекта (генерируется в mongodb)
+  string SectionId = 2; // идентификатор секции данных
+  bytes Data = 3; // сериализованные данные
+  string Type = 4; // тип данных
 }

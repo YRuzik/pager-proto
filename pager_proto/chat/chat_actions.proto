@@ -14,15 +14,15 @@ enum ChatType {
 }
 
 message Chat {
-  string id = 1; //идентификатор чата
-  ChatType type = 2; //тип чата
-  optional ChatMetadata metadata = 3; //дополнительная информация
-  repeated string members_id = 4; //идентификаторы участников
+  string Id = 1; //идентификатор чата
+  ChatType Type = 2; //тип чата
+  optional ChatMetadata Metadata = 3; //дополнительная информация
+  repeated string MembersId = 4; //идентификаторы участников
 }
 
 message ChatMetadata {
-  string title = 1; // название группового чата
-  optional string avatar_url = 2; // обложка для группового чата
+  string Title = 1; // название группового чата
+  optional string AvatarUrl = 2; // обложка для группового чата
 }
 
 message ChatRole {
@@ -31,8 +31,8 @@ message ChatRole {
     member = 1;
     viewer = 2;
   }
-  string id = 1; // идентификатор чата
-  Roles role = 2; // роль в чате
+  string Id = 1; // идентификатор чата
+  Roles Role = 2; // роль в чате
 }
 
 message ChatMessage {
@@ -43,18 +43,18 @@ message ChatMessage {
     error = 3;
     deleted = 4;
   }
-  string id = 1; // идентификатор сообщения
-  optional string text = 2; //текст сообщения
-  int64 stamp_millis = 3; //время отправки сообщения
-  MessageStatus status = 4; //статус сообщения
-  string author_id = 5; //автор сообщения
-  string linked_chat_id = 6; //связанный чат
+  string Id = 1; // идентификатор сообщения
+  optional string Text = 2; //текст сообщения
+  int64 StampMillis = 3; //время отправки сообщения
+  MessageStatus Status = 4; //статус сообщения
+  string AuthorId = 5; //автор сообщения
+  string LinkedChatId = 6; //связанный чат
 }
 
 message CreateChatRequest {
-  ChatType type = 1; //тип чата
-  optional ChatMetadata metadata = 2; //дополнительная информация
-  repeated string members_id = 3; //идентификаторы участников
+  ChatType Type = 1; //тип чата
+  optional ChatMetadata Metadata = 2; //дополнительная информация
+  repeated string MembersId = 3; //идентификаторы участников
 }
 
 //message ChatRules {
