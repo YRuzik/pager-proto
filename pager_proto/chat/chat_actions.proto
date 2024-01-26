@@ -57,19 +57,12 @@ message CreateChatRequest {
   repeated string MembersId = 3; //идентификаторы участников
 }
 
-//message ChatRules {
-//  oneof Rules {
-//    PersonalChat personal_chat = 1; // персональные правила чата
-//    GroupChat group_chat = 2; // групповые правила чата
-//  }
-//}
-//
-//message PersonalChat {
-//  ChatMessage message = 1; // первое сообщение которое пишет отправитель
-//}
-//
-//message GroupChat {
-//  string title = 1; // название группового чата
-//  optional string avatar_url = 2; // обложка для группового чата
-//}
+message ChatMember {
+  string UserId = 1; // Индетификатор пользователя
+  string Email = 2; // Почта пользователя
+  bytes Avatar = 3; // Картинка профиля пользователя
+  string Login = 4;  // Логин пользователя
+  bool Online = 5; // метка онлайна
+  int64 lastSeenMillis = 6; // когда последний раз заходил
+}
 

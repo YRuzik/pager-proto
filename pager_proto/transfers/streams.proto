@@ -9,6 +9,7 @@ message ProfileStreamRequest {
     profile_info = 1; // информация о профиле
     chats_role = 2; // информация о роли в чатах
   }
+  string UserId = 1;
 }
 
 message ChatStreamRequest {
@@ -20,7 +21,16 @@ message ChatStreamRequest {
   string ChatId = 1; // идентификатор чата
 }
 
+message ChatMemberRequest {
+  enum Type {
+    none = 0;
+    member_info = 1; // информация об участнике
+  }
+  string MemberId = 1;
+}
+
 service PagerStreams {
   rpc StreamProfile(ProfileStreamRequest) returns (stream TransferObject);
   rpc StreamChat(ChatStreamRequest) returns (stream TransferObject);
+  rpc StreamChatMember(ChatMemberRequest) returns (stream TransferObject);
 }
