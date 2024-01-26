@@ -9,5 +9,4 @@ message PagerProfile {
   string Email = 2; // Почта пользователя
   bytes Avatar = 3; // Картинка профиля пользователя
   string Login = 4;  // Логин пользователя
-  bool Online = 5; //Пользователь в сети или нет
 }
