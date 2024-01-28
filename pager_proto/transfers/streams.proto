@@ -19,7 +19,7 @@ message ChatStreamRequest {
     messages = 2; // сообщения в чате
   }
   string ChatId = 1; // идентификатор чата
-  int64 RequestedDays = 2; // запрашимываемые дни по сообщениям
+  int64 RequestedMessages = 2; // количество запрашивыемых сообщений
 }
 
 message ChatMemberRequest {
