@@ -9,7 +9,6 @@ message ProfileStreamRequest {
     profile_info = 1; // информация о профиле
     chats_role = 2; // информация о роли в чатах
   }
-  string UserId = 1;
 }
 
 message ChatStreamRequest {
