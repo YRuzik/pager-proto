@@ -58,7 +58,7 @@ message CreateChatRequest {
 }
 
 message ChatMember {
-  string UserId = 1; // Индетификатор пользователя
+  string Id = 1; // Индетификатор пользователя
   string Email = 2; // Почта пользователя
   bytes Avatar = 3; // Картинка профиля пользователя
   string Login = 4;  // Логин пользователя
