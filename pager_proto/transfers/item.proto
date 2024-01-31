@@ -7,4 +7,5 @@ message TransferObject {
   string SectionId = 2; // идентификатор секции данных
   bytes Data = 3; // сериализованные данные
   string Type = 4; // тип данных
+  int64 SeqNumber = 5; // номер
 }

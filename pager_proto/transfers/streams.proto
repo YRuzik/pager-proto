@@ -9,7 +9,6 @@ message ProfileStreamRequest {
     profile_info = 1; // информация о профиле
     chats_role = 2; // информация о роли в чатах
   }
-  string UserId = 1;
 }
 
 message ChatStreamRequest {
@@ -19,7 +18,7 @@ message ChatStreamRequest {
     messages = 2; // сообщения в чате
   }
   string ChatId = 1; // идентификатор чата
-  int64 RequestedDays = 2; // запрашимываемые дни по сообщениям
+  int64 RequestedMessages = 2; // количество запрашивыемых сообщений
 }
 
 message ChatMemberRequest {
