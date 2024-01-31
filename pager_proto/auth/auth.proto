@@ -6,7 +6,6 @@ import "common/common.proto";
 service AuthService  {
   rpc Login(LoginRequest) returns (Token);
   rpc Registration(RegistrationRequest) returns (Empty);
-  rpc SearchUsersByIdentifier(SearchUsersRequest) returns (SearchUsersResponse);
   rpc Refresh(RefreshRequest) returns(RefreshResponse);
 }
 
@@ -32,12 +31,4 @@ message RegistrationRequest {
   string login = 1; //Логин пользователя
   string email = 2; //Почта пользователя
   string password = 3; //Пароль пользователя
-}
-
-message SearchUsersRequest {
-  string identifier = 1;  // Логин или почта для поиска
-}
-
-message SearchUsersResponse {
-  repeated string userIds = 1;  // Список ID найденных пользователей
 }

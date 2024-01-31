@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "common/common.proto";
+package com.pager.api;
+option go_package = "pager-services/pkg/api/pager_api/client;pager_client";
+
+service ClientService {
+  rpc SearchUsersByIdentifier(SearchUsersRequest) returns (SearchUsersResponse);
+  rpc ChangeDataProfile(PagerProfile) returns (PagerProfile);
+}
+
+
+message SearchUsersRequest {
+  string identifier = 1;  // Логин для поиска
+}
+
+message SearchUsersResponse {
+  repeated string userIds = 1;  // Список ID найденных пользователей
+}
