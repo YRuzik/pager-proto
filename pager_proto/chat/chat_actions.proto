@@ -4,8 +4,13 @@ option go_package = "pager-services/pkg/api/pager_api/chat;pager_chat";
 import "common/common.proto";
 
 service ChatActions {
-  rpc CreateChat(CreateChatRequest) returns (Chat);
+  rpc UpdateChat(Chat) returns (Chat);
   rpc SendMessage(ChatMessage) returns (Empty);
+  rpc UpdateManyMessages(ManyMessagesRequest) returns (Empty);
+}
+
+message ManyMessagesRequest {
+  repeated ChatMessage messages = 1;
 }
 
 enum ChatType {
@@ -49,12 +54,7 @@ message ChatMessage {
   MessageStatus Status = 4; //статус сообщения
   string AuthorId = 5; //автор сообщения
   string LinkedChatId = 6; //связанный чат
-}
-
-message CreateChatRequest {
-  ChatType Type = 1; //тип чата
-  optional ChatMetadata Metadata = 2; //дополнительная информация
-  repeated string MembersId = 3; //идентификаторы участников
+  optional ChatMessage LinkedMessage = 7; //связанное сообщение
 }
 
 message ChatMember {
