@@ -55,7 +55,7 @@ message ChatMessage {
   string AuthorId = 5; //автор сообщения
   string LinkedChatId = 6; //связанный чат
   optional ChatMessage LinkedMessage = 7; //связанное сообщение
-  string Updated = 8; //было ли изменено сообщение
+  bool Updated = 8; //было ли изменено сообщение
 }
 
 message ChatMember {
